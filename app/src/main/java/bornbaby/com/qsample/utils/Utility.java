@@ -28,22 +28,7 @@ public class Utility {
     }
 
 
-    public static void navigateFragment(Fragment fragment,
-                                        String tag, Bundle bundle, FragmentActivity fragmentActivity) {
-        FragmentManager fragmentManager = fragmentActivity
-                .getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager
-                .beginTransaction();
-        /*fragmentTransaction.setCustomAnimations(R.anim.slide_left_right,
-                R.anim.fade_out);*/
-        if (bundle != null) {
-            fragment.setArguments(bundle);
-        }
-        fragmentTransaction.replace(R.id.frame_content, fragment, tag);
-        fragmentTransaction.addToBackStack(tag);
-        //fragmentTransaction.commit();
-        fragmentTransaction.commitAllowingStateLoss();
-    }
+
 
     public static void navigateDashBoardFragment(Fragment fragment,
                                                  String tag, Bundle bundle, FragmentActivity fragmentActivity) {
@@ -51,8 +36,6 @@ public class Utility {
                 .getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager
                 .beginTransaction();
-        /*fragmentTransaction.setCustomAnimations(R.anim.slide_left_right,
-                R.anim.fade_out);*/
         if (bundle != null) {
             fragment.setArguments(bundle);
         }
